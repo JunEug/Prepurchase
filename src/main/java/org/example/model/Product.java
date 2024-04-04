@@ -9,9 +9,11 @@ import lombok.Data;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
+
 @Data
 @Entity
 @Table(name = "product", schema = "prepurchase")
+@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

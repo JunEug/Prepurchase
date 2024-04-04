@@ -6,6 +6,7 @@ import org.example.model.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class ProductService {
 
@@ -22,4 +23,10 @@ public class ProductService {
     public void createProduct(Product product) {
         productRepository.save(product);
     }
+
+
+    public Product getProductById(Long id) {
+        return productRepository.findByProductId(id);
+    }
+
 }
