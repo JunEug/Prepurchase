@@ -5,6 +5,7 @@ import org.example.model.Product;
 import org.example.model.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
@@ -29,4 +30,27 @@ public class ProductService {
         return productRepository.findByProductId(id);
     }
 
+    @Transactional
+    public Product updateProduct(Long id, Product updatedProduct) {
+        Product existingProduct = productRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Product not found with id: " + id));
+
+        existingProduct.setName(updatedProduct.getName());
+        existingProduct.setPrice(updatedProduct.getPrice());
+        existingProduct.setSale(updatedProduct.getSale());
+        existingProduct.setDescription(updatedProduct.getDescription());
+        existingProduct.setDestinationTime(updatedProduct.getDestinationTime());
+        existingProduct.setWaysToDelivery(updatedProduct.getWaysToDelivery());
+        existingProduct.setDeliveryPrice(updatedProduct.getDeliveryPrice());
+        existingProduct.setWaysToPay(updatedProduct.getWaysToPay());
+        existingProduct.setPolitics(updatedProduct.getPolitics());
+        existingProduct.setProductImageUrl(updatedProduct.getProductImageUrl());
+
+        return productRepository.save(existingProduct);
+    }
+
+    @Transactional
+    public void deleteProduct(Long id) {
+        productRepository.deleteById(id);
+    }
 }
