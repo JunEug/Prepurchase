@@ -1,8 +1,8 @@
 package org.example.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.model.Product;
-import org.example.model.ProductRepository;
+import org.example.model.product.Product;
+import org.example.model.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

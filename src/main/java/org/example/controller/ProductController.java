@@ -1,9 +1,9 @@
 package org.example.controller;
 
-import org.example.model.ProductRepository;
+import org.example.model.product.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.example.model.Product;
+import org.example.model.product.Product;
 import org.example.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
