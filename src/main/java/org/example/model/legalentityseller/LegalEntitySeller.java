@@ -1,19 +1,19 @@
-package org.example.model.legalentity;
-
-import javax.persistence.*;
-import java.util.Map;
+package org.example.model.legalentityseller;
 
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.Data;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
+import javax.persistence.*;
+import java.util.Map;
+
 
 @Data
 @Entity
-@Table(name = "legal_entity", schema = "prepurchase")
+@Table(name = "legal_entity_seller", schema = "prepurchase")
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
-public class LegalEntity {
+public class LegalEntitySeller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
