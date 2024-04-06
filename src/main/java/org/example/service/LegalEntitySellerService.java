@@ -33,7 +33,6 @@ public class LegalEntitySellerService {
         if (optionalSeller.isPresent()) {
             LegalEntitySeller seller = optionalSeller.get();
             seller.setCompanyName(sellerDetails.getCompanyName());
-            // Здесь установите остальные поля
             return repository.save(seller);
         } else {
             throw new RuntimeException("Seller not found with id: " + id);
